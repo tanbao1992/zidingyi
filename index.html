@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>自定义提示框</title>
+		<link rel="stylesheet" type="text/css" href="css/alert.css"/>
+		<link rel="stylesheet" type="text/css" href="css/confirm.css"/>
+		<script src="js/alert.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/confirm.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p>这是第1个段落</p>
+		<p>这是第2个段落</p>
+		<p>这是第3个段落</p>
+		<p>这是第4个段落</p>
+		<p>这是第5个段落</p>
+		<p>这是第6个段落</p>
+		<p>这是第7个段落</p>
+		<p>这是第8个段落</p>
+		<p>这是第9个段落</p>
+		<p>这是第10个段落</p>
+	</body>
+	<script type="text/javascript">
+		
+		var allP = document.querySelectorAll('p')
+		Array.prototype.slice.call(allP).forEach(function(item){
+			
+			item.onclick = function(){
+				
+//				that = this
+				// 构建alert对象，传递参数，其中第二个参数是一个方法，该方法其实是一个回调方法，在此处声明回调方法，等待执行。
+				// 回调方法(callback)，先声明不执行，等到被调用的时候才执行
+				// 作用：在内部声明，声明完成之后让代码去执行外部的逻辑。当外部逻辑执行结束的同时可以返回一个执行结果。此时内部可以根据外部返回的结果做出相应的操作。
+				
+				
+				new Confirm('确定要删除吗',function(){
+					
+					
+					item.remove()
+					new Alert('删除完成',function(){
+					
+						item.style.color = 'red'
+						
+					})
+					
+				})
+				
+				
+			}
+		})
+	</script>
+</html>

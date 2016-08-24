@@ -1,0 +1,16 @@
+.modal-sureButton,.modal-cancleButton{
+	
+	width:50%;
+	height:50px;
+	line-height: 50px;
+	text-align: center;
+	display: inline-block;
+}
+.modal-sureButton{
+	
+	border-right: solid 0.5px gray;
+}
+.modal-cancleButton{
+	
+	border-left: solid 0.5px gray;
+}
